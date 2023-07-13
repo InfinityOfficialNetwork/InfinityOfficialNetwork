@@ -1,9 +1,27 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "CustomBlock1",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "custom_block_1",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/test_mod/models/block/custom_block_1.json",
+          "src/main/java/net/infinityofficial/test_mod/block/CustomBlock1Block.java",
+          "src/main/resources/assets/test_mod/models/item/custom_block_1.json",
+          "src/main/resources/assets/test_mod/blockstates/custom_block_1.json"
+        ]
+      }
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "block.test_mod.custom_block_1": "Custom Block 1"
+    }
   },
   "foldersRoot": {
     "name": "~",
@@ -13,9 +31,9 @@
     "modid": "test_mod",
     "modName": "Test Mod",
     "version": "1.0.0",
-    "author": "InfiniPLEX, MCreator",
-    "websiteURL": "https://mcreator.net",
-    "license": "Academic Free License v3.0",
+    "author": "InfiniPLEX",
+    "websiteURL": "https://infinityofficial.net",
+    "license": "All Rights Reserved",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
@@ -23,6 +41,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.18.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.infinityofficial.test_mod",
     "lockBaseModFiles": false
   },

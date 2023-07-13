@@ -1,14 +1,14 @@
 modLoader="javafml"
 loaderVersion="[40,)"
-license="Academic Free License v3.0"
+license="All Rights Reserved"
 
 [[mods]]
 modId="test_mod"
 version="1.0.0"
 displayName="Test Mod"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
-authors="InfiniPLEX, MCreator"
+displayURL="https://infinityofficial.net"
+authors="InfiniPLEX"
 
 [[dependencies.test_mod]]
     modId="minecraft"

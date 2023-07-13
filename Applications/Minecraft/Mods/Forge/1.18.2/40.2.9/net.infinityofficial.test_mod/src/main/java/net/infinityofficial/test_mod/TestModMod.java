@@ -26,6 +26,9 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.infinityofficial.test_mod.init.TestModModItems;
+import net.infinityofficial.test_mod.init.TestModModBlocks;
+
 import java.util.function.Supplier;
 import java.util.function.Function;
 import java.util.function.BiConsumer;
@@ -41,6 +44,8 @@ public class TestModMod {
 	public TestModMod() {
 
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		TestModModBlocks.REGISTRY.register(bus);
+		TestModModItems.REGISTRY.register(bus);
 
 	}
 
