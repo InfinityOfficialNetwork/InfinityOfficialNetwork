@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Management/OperatingSystem/Windows/EventRecorder/Core/bin
+/Management/OperatingSystem/Windows/EventRecorder/Core/obj
