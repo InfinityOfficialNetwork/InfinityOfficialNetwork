@@ -5,3 +5,5 @@
 /.vs
 /Management/OperatingSystem/Windows/EventRecorder/Core/bin
 /Management/OperatingSystem/Windows/EventRecorder/Core/obj
+/Management/OperatingSystem/Windows/EventRecorder/Setup/Debug
+/Management/OperatingSystem/Windows/EventRecorder/Setup/Release

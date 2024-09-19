@@ -1,4 +1,5 @@
-﻿using SQLitePCL;
+﻿using Microsoft.Extensions.DependencyInjection;
+using SQLitePCL;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
@@ -14,20 +15,16 @@ namespace InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecord
     internal class EventWriter
     {
         EventWatcher eventWatcher;
-        string eventDbFileName;
-
-        EventDbContext eventDbContext;
+        IServiceProvider serviceProvider;
 
         ILogger<Worker> logger;
 
-        internal EventWriter(ILogger<Worker> logger, string eventDbFileName)
+        internal EventWriter(ILogger<Worker> logger, IServiceProvider serviceProvider)
         {
             this.logger = logger;
-            this.eventDbFileName = eventDbFileName;
+            this.serviceProvider = serviceProvider;
             eventWatcher = new EventWatcher(OnEventReceived, logger);
 
-            eventDbContext = new EventDbContext(logger, eventDbFileName);
-            eventDbContext.Database.EnsureCreated();
         }
 
         internal async Task Start()
@@ -69,11 +66,14 @@ namespace InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecord
 
             Events.EventType eventType1 = new Events.EventType(eventType, XmlData);
 
-            using (var db = new EventDbContext(logger, eventDbFileName))
+            using (var scope = serviceProvider.CreateScope())
             {
-                db.Events.Add(eventType1);
+                using (var db = scope.ServiceProvider.GetRequiredService<EventDbContext>())
+                {
+                    db.Events.Add(eventType1);
 
-                db.SaveChanges();
+                    db.SaveChanges();
+                }
             }
 
             logger.LogInformation($"Event from log {e.EventRecord.LogName} recorded.");

@@ -36,7 +36,7 @@ namespace InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecord
             RawEvent = rawEvent;
         }
 
-        public string RawEvent { get; init; }
+        public string? RawEvent { get; init; }
 
         public SystemPropertiesType? System { get; init; }
         public byte[]? BinaryEventData { get; init; }

@@ -9,30 +9,26 @@ namespace InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecord
 {
     public class EventDbContext : DbContext
     {
-        public EventDbContext(ILogger<Worker> logger, string SQliteDbFileName)
+        public EventDbContext(DbContextOptions<EventDbContext> options)
+            : base(options)
         {
-            this.logger = logger;
-            sqliteDbFileName = SQliteDbFileName;
         }
 
-        readonly string sqliteDbFileName;
 
-        ILogger<Worker> logger;
+
 
         public DbSet<Events.EventType> Events { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            try
-            {
-                logger.LogInformation("Database attaching to SQLite file");
-                optionsBuilder.UseSqlite($"Data Source={sqliteDbFileName}");
-            }
-            catch (Exception ex)
-            {
-                logger.LogCritical(ex, "An error occured while connecting to the database, see inner exception for details.");
-                throw new Exception("Failed to connect to the databse", ex);
-            }
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    try
+        //    {
+        //        optionsBuilder.UseSqlServer(@"Server=ION-PC-0017;Database=events;User ID=events_login;Password=;Trusted_Connection=True;TrustServerCertificate=True");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception("Failed to connect to the databse", ex);
+        //    }
+        //}
     }
 }

@@ -13,7 +13,7 @@ namespace InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecord
     internal class EventWatcher
     {
         EventLogSession? session;
-        List<string> logNames;
+        List<string>? logNames;
         EventHandler<EventRecordWrittenEventArgs> eventHandler;
 
         List<EventLogQuery> eventQuerys;
@@ -62,8 +62,8 @@ namespace InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecord
         {
             logger.LogInformation($"Event watcher reattaching");
 
-            Dettach();
-            Attach();
+            await Dettach();
+            await Attach();
         }
 
         internal async Task Dettach()
@@ -77,7 +77,7 @@ namespace InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecord
 
             watchers.Clear();
             eventQuerys.Clear();
-            logNames.Clear();
+            logNames?.Clear();
         }
     }
 }
