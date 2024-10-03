@@ -19,6 +19,15 @@ namespace InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecord
 
         public DbSet<Events.EventType> Events { get; set; }
 
+        public void ClearChangeTracker()
+        {
+            foreach (var entityEntry in ChangeTracker.Entries())
+            {
+                entityEntry.State = EntityState.Detached;
+            }
+            GC.Collect();
+        }
+
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    try

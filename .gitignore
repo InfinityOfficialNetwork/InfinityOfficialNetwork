@@ -7,3 +7,10 @@
 /Management/OperatingSystem/Windows/EventRecorder/Core/obj
 /Management/OperatingSystem/Windows/EventRecorder/Setup/Debug
 /Management/OperatingSystem/Windows/EventRecorder/Setup/Release
+/MemoryTest/bin
+/MemoryTest/obj
+/Native/Core/x64/Release
+/Shared/Memory/bin
+/Shared/Memory/obj
+/Shared/Multithreading/ThreadPool/obj
+/x64/Release

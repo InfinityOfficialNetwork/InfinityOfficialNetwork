@@ -116,7 +116,7 @@ namespace InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecord
 
             builder.Services.AddDbContext<EventDbContext>(options =>
                 {
-                    options.UseSqlServer(@"Server=ION-PC-0017;Database=events;User ID=events_login;Password=@Password123;Trusted_Connection=True;TrustServerCertificate=True");
+                    options.UseSqlServer(@"Server=ION-PC-0017;Database=events;Trusted_Connection=True;TrustServerCertificate=True");
                 });
 
             builder.Services.AddHostedService<Worker>();

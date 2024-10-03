@@ -53,7 +53,7 @@ namespace InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecord
                 }
                 catch (Exception ex)
                 {
-                    logger.LogCritical(ex, $"An error occured while attaching to log {logName}");
+                    logger.LogCritical(ex, $"An error occurred while attaching to log {logName}");
                     throw new Exception("Failed to attach to event log", ex);
                 }
         }

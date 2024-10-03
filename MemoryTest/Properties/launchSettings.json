@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "MemoryTest": {
+      "commandName": "Project",
+      "nativeDebugging": true,
+      "sqlDebugging": true
+    }
+  }
+}

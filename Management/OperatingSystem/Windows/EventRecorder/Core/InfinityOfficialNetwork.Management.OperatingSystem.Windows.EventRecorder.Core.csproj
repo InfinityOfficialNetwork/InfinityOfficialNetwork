@@ -7,6 +7,8 @@
     <UserSecretsId>dotnet-InfinityOfficialNetwork.Management.EventRecorder-5c676747-767c-4d63-adec-bf279a09adcf</UserSecretsId>
     <AssemblyName>InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecorder.Core</AssemblyName>
     <RootNamespace>InfinityOfficialNetwork.Management.OperatingSystem.Windows.EventRecorder.Core</RootNamespace>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
   </PropertyGroup>
 
   <ItemGroup>
